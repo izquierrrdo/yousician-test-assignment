@@ -1,0 +1,49 @@
+<br><br>
+<label>Song search: </label>
+<input name="term" type="text" [(ngModel)]="filter" />
+<br><br>
+<label>Level filter:</label>
+<br>
+<p>
+    {{ this.minLevel }}
+      <input type="range" min="{{this.minLevel}}" max="{{this.maxLevel}}" 
+              [(ngModel)]="sliderValue"
+            >
+    {{ this.maxLevel }}
+</p>
+
+<ul class="songs">
+  <li *ngFor="let song of songs | songLevelPipe:sliderValue | songSearchPipe:filter"
+  (click)="onSelect(song)"
+  
+  [class.selected]="song === selectedSong"
+  >
+    <div class="songlist-inner">
+      <div class="song-level">
+        <span class="song-level-inner">
+          {{ song.level }}
+        </span>
+        <svg viewBox="0 0 42 42" class="song-donut">
+          <circle class="donut-hole" cx="21" cy="21" r="15.91549430918954" fill="transparent"></circle>
+          <circle class="donut-ring" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#444" stroke-width="3"></circle>
+          <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#33cc00" stroke-width="3" [attr.stroke-dasharray]="[(song.level/this.maxLevelSVG)*100, 100-(song.level/this.maxLevelSVG)*100]"  stroke-dashoffset="25"></circle>
+        </svg>
+      </div>
+      <div>
+        <div class="song-title">
+            {{ song.title }}  
+        </div>
+        <div class="song-data">
+            <star-rating [starType]="'svg'"
+              [rating]="song.rating"
+              [showHalfStars]="true"
+              (starClickChange)="onRatingChange($event, song)"
+              >
+          </star-rating>
+          <div class="song-data-item">{{ song.artist }}</div>
+        </div>
+      </div>
+      <div class="edit-btn"></div>
+    </div>
+  </li>
+</ul>

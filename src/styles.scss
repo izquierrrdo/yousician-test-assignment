@@ -1,0 +1,58 @@
+$color-negative-rating: #ddeaff !default;
+$color-ok-rating: #ddeaff !default;
+$color-positive-rating: #ddeaff !default;
+$color-default-rating: #ddeaff !default;
+
+.container {
+    max-width: 1200px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+
+star-rating {
+    height: 12px !important;
+}
+
+.rating {
+    outline: none;
+}
+
+.star-container {
+    height: 12px;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.star {
+    width: 12px !important;
+    height: 12px !important;
+}
+
+.star svg {
+    width: 12px !important;
+    height: 12px !important;
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+    star-rating {
+        height: 24px !important;
+    }
+    
+    .star-container {
+        height: 24px;
+    }
+    
+    .star {
+        width: 24px !important;
+        height: 24px !important;
+    }
+    
+    .star svg {
+        width: 24px !important;
+        height: 24px !important;
+    }
+}
+
+@import '~css-star-rating/scss/star-rating';

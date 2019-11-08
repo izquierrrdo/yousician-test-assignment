@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:300');
+
+.songs {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    color: #fff;
+}
+
+.songs li {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 10px 5px;
+    list-style: none;
+    border-bottom: 1px solid #212326;
+    cursor: pointer;
+}
+
+.song-level {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.song-donut {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.song-level-inner {
+    font-size: 10px !important;
+    font-weight: normal;
+    line-height: 0;
+}
+
+.songlist-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.songlist-inner::before {
+    content: '';
+    background: #33cc00 url('/assets/images/fingerprint-white.png') no-repeat center center;
+    background-size: 30px;
+    border-radius: 12px;
+    display: block;
+    height: 40px;
+    width: 40px;
+}
+
+.song-title {
+    font-size: 15px;
+    padding-left: 5px;
+    width: 175px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.song-data {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    font-size: 14px;
+    height: 22px;
+    color: #878789;
+    padding-left: 5px;
+}
+
+.song-data-item {
+    max-width: 120px;
+    padding-left: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.selected {
+    background: #222;
+}
+
+.edit-btn {
+    margin-left: auto;
+    width: 25px;
+    height: 25px;
+    background: url('/assets/images/more.svg') no-repeat center center;
+    background-size: 25px;
+}
+
+@media screen and (min-width: 350px) {
+    .song-title {
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .songlist-inner::before {
+        background-size: 50px;
+        height: 70px;
+        width: 80px;
+    }
+
+    .songs li {
+        padding: 10px 15px;
+    }
+
+    .song-title {
+        font-size: 30px;
+        padding-left: 15px;
+        width: 450px;
+    }
+
+    .song-level {
+        width: 50px;
+        height: 50px;
+        margin-left: 15px;
+    }
+
+    .song-donut {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .song-level-inner {
+        font-size: 20px !important;
+        font-weight: bold;
+    }
+
+    .song-data {
+        font-size: 24px;
+        height: 22px;
+        padding-left: 15px;
+    }
+
+    .song-data-item {
+        max-width: 350px;
+        padding-left: 15px;
+    }
+
+    .edit-btn {
+        width: 30px;
+        height: 30px;
+        background-size: 30px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .song-title {
+        max-width: 610px;
+    }
+
+
+    .song-data-item {
+        max-width: 420px;
+    }
+
+    .edit-btn {
+        width: 45px;
+        height: 45px;
+        background-size: 45px;
+    }
+}

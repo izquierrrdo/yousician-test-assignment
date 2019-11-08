@@ -1,0 +1,11 @@
+{
+    "apps": [{
+      "styles": ["styles.scss"],
+      "assets": [
+        "assets/**/*"
+      ]
+    }],
+    "defaults": {
+      "styleExt": "scss"
+    }
+  }
